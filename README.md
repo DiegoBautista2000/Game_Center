@@ -1,2 +1,3 @@
 # Game_Center
-School project from Alex and Diego. 
+School project from Alex and Diego.
+
