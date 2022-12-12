@@ -116,8 +116,10 @@ def hit_or_stand(deck,hand):
     global playing  # Loop control for when player hits or stands
 
     while True:
-        x = input("Would you like to Hit or Stand? Type 'h' for Hit or 's' for Stand. Hit Enter once choice is selected: ")
-
+        try:
+            x = input("Would you like to Hit or Stand? Type 'h' for Hit or 's' for Stand. Hit Enter once choice is selected: ")
+        except ValueError:
+            print("Please enter 'h' or 's'")
         if x[0].lower() == 'h':
             hit(deck,hand)  # Refers to hit function on line 108-111
 
@@ -137,7 +139,9 @@ def show_some(player,dealer):
     print("\nDealer's Hand:")
     print(" <card hidden>")
     print('',dealer.cards[1])
+    print("Dealer's Hand =",dealer.value)
     print("\nPlayer's Hand:", *player.cards, sep='\n ')
+    print("Player's Hand =",player.value, '\n')
 
 def show_all(player,dealer):
     print("\nDealer's Hand:", *dealer.cards, sep='\n ')
@@ -209,7 +213,7 @@ while True:
             break
 
 
-            # If Player hasn't busted, play Dealer's hand until Dealer reaches 17
+            # If Player hasn't busted, play Dealer's hand until Dealer reaches 18
     if player_hand.value <= 21:
 
         while dealer_hand.value < 18:
