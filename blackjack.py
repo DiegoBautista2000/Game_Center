@@ -1,3 +1,5 @@
+# Alex Melo, Diego Bautista COP1047C-2227-8751|Introduction to Python Program
+# Group Project
 # Random library for deck
 import random
 
